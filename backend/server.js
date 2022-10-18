@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-  res.send('API is running...')
+  return res.send('API is running...')
 })
 
 app.get('/api/products', (req, res) => {
@@ -19,4 +19,4 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product)
 })
 
-app.listen(5000, console.log('Server running on port 5000'))
+app.listen(2000, console.log('Server running on port 2000'))
