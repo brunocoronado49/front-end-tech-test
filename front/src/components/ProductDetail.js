@@ -8,21 +8,25 @@ const ProductDetail = () => {
 
     return (
         <div className="detail">
-            <div className="image-detail">
-                <img src={`http://localhost:2000${product.image}`} alt={product.name} />
+            <div className="image-detail-container">
+                <img
+                    src={`http://localhost:2000${product.image}`}
+                    alt={product.name}
+                    className="image-detail"
+                />
             </div>
             <div className="info">
                 <h1>
                     {product._id} - {product.name} - {product.price}
                 </h1>
                 <p>{product.description}</p>
-                <p>{product.countInStock}</p>
-                <h3>Info:</h3>
+                <p>Stock: {product.countInStock}</p>
                 <div className="extra">
-                    <p>{product.category}</p>
-                    <p>{product.brand}</p>
-                    <p>{product.rating}</p>
-                    <p>{product.numReviews}</p>
+                    <h3 className="text">Info:</h3>
+                    <p className="text">{product.category}</p>
+                    <p className="text">{product.brand}</p>
+                    <p className="text">Rating: {product.rating}</p>
+                    <p className="text">Reviews: {product.numReviews}</p>
                 </div>
             </div>
             <button className="btn-add">Add to cart</button>

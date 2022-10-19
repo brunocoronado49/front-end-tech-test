@@ -1,0 +1,23 @@
+.detail {
+    text-align: center;
+}
+
+.image-detail-container {
+    padding: 40px;
+}
+
+.image-detail {
+    border-radius: 50px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.extra {
+    padding: 20px;
+}
+
+.text {
+    font-size: 25px;
+}
