@@ -50,3 +50,8 @@
     cursor: pointer;
     color: #000000;
 }
+
+.btn-add:hover {
+    background-color: #000000;
+    color: #d2dae2;
+}

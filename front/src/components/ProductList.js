@@ -9,7 +9,7 @@ const ProductList = () => {
             <h1>Todos los productos</h1>
            {
             products.map(product => (
-                <ProductCard {...product} key={product._id} />
+                <ProductCard {...product} key={product._id} id={product._id} />
             ))
            }
         </div>

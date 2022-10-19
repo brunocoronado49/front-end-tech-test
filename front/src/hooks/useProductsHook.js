@@ -3,13 +3,12 @@ import { getAllProducts, getOneProduct } from "../services/api";
 
 export const useGetAllProducts = () => {
     const [products, setProducts] = useState([]);
-    const  response = getAllProducts();
+    const response = getAllProducts();
 
     useEffect(() => {
-        const res = response.then(product => setProducts(product))
-        console.log(res)
+        const res = response.then((product) => setProducts(product));
+        console.log(res);
     }, []);
-
 
     return products;
 };
@@ -17,7 +16,11 @@ export const useGetAllProducts = () => {
 export const useGetOneProduct = (id) => {
     const [product, setProduct] = useState({});
     const response = getOneProduct(id);
-    setProduct(response);
+
+    useEffect(() => {
+        const res = response.then((product) => setProduct(product));
+        console.log(res);
+    }, []);
 
     return product;
 };

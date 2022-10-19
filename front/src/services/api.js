@@ -22,5 +22,6 @@ export const getOneProduct = async (id) => {
         return response.data;
     } catch (error) {
         console.log(error);
+        return error;
     }
 };
