@@ -1,33 +1,35 @@
-import { useEffect, useState } from "react";
-import axios from 'axios'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Navbar from "./components/Navbar";
+// import CartPage from "./components/CartPage";
+// import ProductDetail from "./components/ProductDetail";
+// import ProductList from "./components/ProductList";
+import "./App.css";
 
 const App = () => {
-    // -------------------------------------------------
-    // DO NOT USE THE CODE BELOW FROM LINES 8 TO 18. THIS IS
-    // HERE TO MAKE SURE THAT THE EXPRESS SERVER IS RUNNING
-    // CORRECTLY. DELETE CODE WHEN COMPLETING YOUR TEST.
-    const [response, setResponse] = useState("");
-
-    const getApiResponse = async () => {
-        const res = await axios.get("http://localhost:2000/")
-        console.log(res)
-        setResponse(res.data)
-    };
-
-    // call server to see if its running
-    useEffect(() => {
-        getApiResponse();
-    }, []);
-    // -------------------------------------------------
-
     return (
-        <div style={{ textAlign: "center" }}>
-            <h1> Prueba tecnica front Ecomsur 2022</h1>
-            <p>Borra esto y comienza aqui.</p>
-            {/* Check to see if express server is running correctly */}
-            <h5>{response}</h5>
+        <div className="app">
+            {/* <Navbar />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<ProductList />} />
+                    <Route path="/cart" element={<CartPage />} />
+                    <Route
+                        path="/product/detail/:id"
+                        element={<ProductDetail />}
+                    />
+                </Routes>
+            </BrowserRouter> */}
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HelloWorld />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
+};
+
+const HelloWorld = () => {
+    return <h1>Hello World</h1>;
 };
 
 export default App;
