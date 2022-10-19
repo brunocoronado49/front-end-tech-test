@@ -1,8 +1,19 @@
+import { useGetAllProducts } from "../hooks/useProductsHook";
+import ProductCard from "./ProductCard";
 
 const ProductList = () => {
-  return (
-    <div>ProductList</div>
-  )
-}
+    const products = useGetAllProducts();
 
-export default ProductList
+    return (
+        <div className="list">
+            <h1>Todos los productos</h1>
+           {
+            products.map(product => (
+                <ProductCard {...product} key={product._id} />
+            ))
+           }
+        </div>
+    );
+};
+
+export default ProductList;

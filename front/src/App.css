@@ -4,3 +4,7 @@ body {
     background-color: #d2dae2;
     color: #1e272e;
 }
+
+.content {
+    padding: 40px;
+}
