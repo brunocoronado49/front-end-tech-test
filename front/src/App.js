@@ -1,15 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import CartPage from "./components/CartPage";
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
-import { useNavigate } from 'react-router-dom'
 
 const App = () => {
-    const navigate = useNavigate();
-    
     return (
         <div className="app">
-            <ProductList />
-            
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<ProductList />} />
+                <Route path="/products/:id" element={<ProductDetail />} />
+                <Route path="/cart" element={<CartPage />} />
+            </Routes>
         </div>
     );
 };
