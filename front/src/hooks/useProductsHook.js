@@ -24,3 +24,14 @@ export const useGetOneProduct = (id) => {
 
     return product;
 };
+
+export const useAddToCart = () => {
+    const [cart, setCart] = useState(0);
+
+    const addToCart = () => {
+        setCart(cart + 1);
+    };
+
+    return [cart, addToCart];
+};
+

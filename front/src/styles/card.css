@@ -55,3 +55,16 @@
     background-color: #000000;
     color: #d2dae2;
 }
+
+.btn-empty {
+    transition: all 0.5s ease;
+    margin: 5px;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    color: #b5bbbd;
+}
