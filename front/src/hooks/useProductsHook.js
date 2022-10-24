@@ -32,10 +32,15 @@ export const useAddToCart = () => {
 
     const addToCart = () => {
         setCart(cart + 1);
-        setProduct({...product});
+        setProduct({ ...product });
         setProducts([...products, product]);
     };
 
-    return [cart, addToCart, products];
-};
+    const removeItem = (index) => {
+        const newItems = [...products];
+        newItems.splice(index, 1);
+        setProducts(newItems);
+    };
 
+    return [cart, addToCart, products, removeItem, product];
+};

@@ -8,7 +8,7 @@ import { useAddToCart } from "./hooks/useProductsHook";
 import "./App.css";
 
 const App = () => {
-    const [cart, addToCart, products] = useAddToCart();
+    const [cart, addToCart, products, removeItem, product] = useAddToCart();
 
     return (
         <div className="app">
@@ -26,7 +26,7 @@ const App = () => {
                     />
                     <Route
                         path="/cart"
-                        element={<CartPage items={products} setItems={addToCart} />}
+                        element={<CartPage items={products} callback={() => removeItem(product._id)} />}
                     />
                 </Routes>
             </div>
