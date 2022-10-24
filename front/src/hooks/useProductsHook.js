@@ -32,11 +32,14 @@ export const useAddToCart = () => {
 
     const addToCart = () => {
         setCart(cart + 1);
-        setProduct({ ...product });
-        setProducts([...products, product]);
+        const response = getAllProducts();
+        const data = response.then((p) => setProduct(p));
+
+        setProducts([...products, data]);
     };
 
     const removeItem = (index) => {
+        setCart(cart - 1);
         const newItems = [...products];
         newItems.splice(index, 1);
         setProducts(newItems);

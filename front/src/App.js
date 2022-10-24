@@ -18,11 +18,11 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route
                         path="/products"
-                        element={<ProductList addToCart={addToCart} />}
+                        element={<ProductList addToCart={() => addToCart(product._id)} />}
                     />
                     <Route
                         path="/products/:id"
-                        element={<ProductDetail addToCart={addToCart} />}
+                        element={<ProductDetail addToCart={() => addToCart(product._id)} />}
                     />
                     <Route
                         path="/cart"
