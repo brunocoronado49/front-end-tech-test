@@ -1,7 +1,7 @@
 import { useGetAllProducts } from "../hooks/useProductsHook";
 import ProductCard from "./ProductCard";
 
-const ProductList = ({ addToCart, productsCart, setProductsCart }) => {
+const ProductList = ({ addToCart }) => {
     const products = useGetAllProducts();
 
     return (
@@ -11,7 +11,8 @@ const ProductList = ({ addToCart, productsCart, setProductsCart }) => {
                 <ProductCard
                     {...product}
                     key={product._id}
-                    addToCart={addToCart}
+                    callback={addToCart}
+                    message="Add to cart"
                 />
             ))}
         </div>

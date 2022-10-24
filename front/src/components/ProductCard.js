@@ -12,15 +12,10 @@ const ProductCard = (props) => {
         category,
         price,
         countInStock,
-        addToCart,
+        callback,
+        message
     } = props;
     const navigate = useNavigate();
-    const [stock, setStock] = useState(countInStock);
-
-    const removeStock = () => {
-        setStock(stock - 1);
-        addToCart();
-    };
 
     return (
         <div className="card">
@@ -40,11 +35,11 @@ const ProductCard = (props) => {
                         {brand} - {category}
                     </p>
                     <p>Price: {price}</p>
-                    <p>Stock: {stock} </p>
+                    <p>Stock: {countInStock} </p>
                 </div>
-                {stock !== 0 ? (
-                    <button className="btn-add" onClick={removeStock}>
-                        Add to cart
+                {countInStock !== 0 ? (
+                    <button className="btn-add" onClick={callback}>
+                        { message }
                     </button>
                 ) : (
                     <button className="btn-empty">Empty stock</button>

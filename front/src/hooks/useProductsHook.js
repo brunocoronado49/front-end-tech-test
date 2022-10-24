@@ -36,6 +36,6 @@ export const useAddToCart = () => {
         setProducts([...products, product]);
     };
 
-    return [cart, addToCart];
+    return [cart, addToCart, products];
 };
 
