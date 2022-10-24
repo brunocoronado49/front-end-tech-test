@@ -1,8 +1,12 @@
+import { useState } from "react";
+import ProductCard from "./ProductCard";
 
 const CartPage = () => {
-  return (
-    <div>CartPage</div>
-  )
-}
+    return (
+        <div>
+            <h1>Carrito</h1>
+        </div>
+    );
+};
 
-export default CartPage
+export default CartPage;

@@ -27,9 +27,13 @@ export const useGetOneProduct = (id) => {
 
 export const useAddToCart = () => {
     const [cart, setCart] = useState(0);
+    const [product, setProduct] = useState({});
+    const [products, setProducts] = useState([]);
 
     const addToCart = () => {
         setCart(cart + 1);
+        setProduct({...product});
+        setProducts([...products, product]);
     };
 
     return [cart, addToCart];

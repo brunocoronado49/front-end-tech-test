@@ -1,7 +1,7 @@
 import { useGetAllProducts } from "../hooks/useProductsHook";
 import ProductCard from "./ProductCard";
 
-const ProductList = ({ cart, setCart, addToCart }) => {
+const ProductList = ({ addToCart, productsCart, setProductsCart }) => {
     const products = useGetAllProducts();
 
     return (
@@ -11,8 +11,6 @@ const ProductList = ({ cart, setCart, addToCart }) => {
                 <ProductCard
                     {...product}
                     key={product._id}
-                    cart={cart}
-                    setCart={setCart}
                     addToCart={addToCart}
                 />
             ))}

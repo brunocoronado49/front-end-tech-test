@@ -18,19 +18,18 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route
                         path="/products"
-                        element={
-                            <ProductList
-                                cart={cart}
-                                addToCart={addToCart}
-                            />
-                        }
+                        element={<ProductList addToCart={addToCart} />}
                     />
-                    <Route path="/products/:id" element={<ProductDetail />} />
+                    <Route
+                        path="/products/:id"
+                        element={<ProductDetail addToCart={addToCart} />}
+                    />
                     <Route path="/cart" element={<CartPage />} />
                 </Routes>
             </div>
         </div>
     );
 };
+
 
 export default App;

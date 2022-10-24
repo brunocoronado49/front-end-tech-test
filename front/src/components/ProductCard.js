@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/card.css";
 
@@ -12,7 +12,7 @@ const ProductCard = (props) => {
         category,
         price,
         countInStock,
-        addToCart
+        addToCart,
     } = props;
     const navigate = useNavigate();
     const [stock, setStock] = useState(countInStock);
@@ -20,8 +20,7 @@ const ProductCard = (props) => {
     const removeStock = () => {
         setStock(stock - 1);
         addToCart();
-    }
-
+    };
 
     return (
         <div className="card">
@@ -43,14 +42,14 @@ const ProductCard = (props) => {
                     <p>Price: {price}</p>
                     <p>Stock: {stock} </p>
                 </div>
-                {
-                    stock !== 0 ? <button className="btn-add" onClick={removeStock}>
-                    Add to cart
-                </button> : <button className="btn-empty">
-                    Empty stock
-                </button>
-                }
-                
+                {stock !== 0 ? (
+                    <button className="btn-add" onClick={removeStock}>
+                        Add to cart
+                    </button>
+                ) : (
+                    <button className="btn-empty">Empty stock</button>
+                )}
+
                 <button
                     className="btn-add"
                     onClick={() => navigate(`/products/${_id}`)}
